@@ -1,0 +1,2212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Onge Cafe — Where the ocean meets the art of being</title>
+<meta name="description" content="Onge Cafe is a vegan-first art cafe and cultural space at Wandoor Beach, Andaman and Nicobar Islands. Food, art, community.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="images/General /Gemini_Generated_Image_iy3jtgiy3jtgiy3j.png">
+<style>
+/* ═══════════════════════════════════════════
+   ONGE CAFE — CSS
+   Coastal · Tribal · Warm · Minimal · Mindful
+   ═══════════════════════════════════════════ */
+
+:root {
+  --sand: #F4EDE4;
+  --sand-dark: #E8DFCF;
+  --ink: #1C2321;
+  --ink-light: #3A3F3D;
+  --teal: #1A5F6A;
+  --teal-light: #247E8A;
+  --terracotta: #B85C38;
+  --terracotta-light: #CB6D47;
+  --divider: #C9BBAA;
+  --divider-light: #DDD3C5;
+  --white: #FDFBF7;
+  --shell: #D4956A;
+  --font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --max-w: 900px;
+  --max-w-wide: 1100px;
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 6rem;
+  --space-2xl: 8rem;
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ink);
+  background: var(--sand);
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+
+/* ── Typography ── */
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+h2.section-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: var(--space-md);
+  color: var(--ink);
+}
+
+h3 {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  margin-bottom: var(--space-sm);
+}
+
+p {
+  font-size: 1rem;
+  color: var(--ink-light);
+  max-width: 680px;
+}
+
+/* ── Layout ── */
+.container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.container--wide {
+  max-width: var(--max-w-wide);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+section {
+  padding: var(--space-2xl) 0;
+}
+
+/* ── Divider ── */
+.divider {
+  width: 60px;
+  height: 1px;
+  background: var(--divider);
+  margin: var(--space-lg) auto;
+}
+
+.divider--left {
+  margin-left: 0;
+}
+
+/* ── Buttons ── */
+.btn {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.9rem 2rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn--primary {
+  background: var(--teal);
+  color: var(--white);
+}
+.btn--primary:hover {
+  background: var(--teal-light);
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--ink);
+}
+.btn--outline:hover {
+  background: var(--ink);
+  color: var(--sand);
+}
+
+.btn--terracotta {
+  background: var(--terracotta);
+  color: var(--white);
+}
+.btn--terracotta:hover {
+  background: var(--terracotta-light);
+}
+
+/* ── Fade-in on scroll ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ══════════════════════════════════════
+   NAVIGATION
+   ══════════════════════════════════════ */
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1.2rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.4s ease, padding 0.4s ease, box-shadow 0.4s ease;
+}
+
+.nav.scrolled {
+  background: rgba(245, 240, 232, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 0.8rem 2rem;
+  box-shadow: 0 1px 0 var(--divider);
+}
+
+.nav__logo {
+  display: flex;
+  align-items: center;
+  transition: opacity 0.4s ease;
+}
+
+.nav__logo-img {
+  height: 44px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  transition: filter 0.5s ease;
+}
+
+.nav.scrolled .nav__logo-img {
+  filter: brightness(1) invert(0);
+}
+
+.nav__links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav__links a {
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.85);
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.nav__links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--teal);
+  transition: width 0.3s ease;
+}
+
+.nav__links a:hover::after {
+  width: 100%;
+}
+
+.nav.scrolled .nav__links a {
+  color: var(--ink-light);
+}
+.nav.scrolled .nav__links a:hover {
+  color: var(--ink);
+}
+
+/* Mobile nav toggle */
+.nav__toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.nav__toggle span {
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background: var(--white);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.nav.scrolled .nav__toggle span {
+  background: var(--ink);
+}
+
+/* ══════════════════════════════════════
+   HERO
+   ══════════════════════════════════════ */
+
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  background: url('images/General /a8002516c60d1dc8618752722f9b1322.jpg') center/cover no-repeat;
+  transform: scale(1.05);
+  transition: transform 8s ease-out;
+}
+
+.hero.loaded .hero__bg {
+  transform: scale(1);
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(26, 26, 26, 0.3) 0%,
+    rgba(26, 26, 26, 0.45) 50%,
+    rgba(26, 26, 26, 0.6) 100%
+  );
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  color: var(--white);
+}
+
+.hero__title {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroFade 1.2s ease forwards 0.3s;
+}
+
+.hero__subtitle {
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 0.04em;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: var(--space-lg);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroFade 1.2s ease forwards 0.6s;
+}
+
+.hero__buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroFade 1.2s ease forwards 0.9s;
+}
+
+@keyframes heroFade {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Scroll indicator ── */
+.hero__scroll {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  opacity: 0;
+  animation: heroFade 1.2s ease forwards 1.5s;
+}
+
+.hero__scroll span {
+  display: block;
+  width: 1px;
+  height: 40px;
+  background: rgba(255,255,255,0.4);
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero__scroll span::after {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--white);
+  animation: scrollLine 2s ease-in-out infinite;
+}
+
+@keyframes scrollLine {
+  0% { top: -100%; }
+  50% { top: 100%; }
+  100% { top: 100%; }
+}
+
+/* ══════════════════════════════════════
+   THREE COLUMNS (Home)
+   ══════════════════════════════════════ */
+
+.pillars {
+  padding: var(--space-2xl) 0;
+  background: var(--sand);
+}
+
+.pillars__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+  text-align: center;
+}
+
+.pillar__label {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: var(--space-sm);
+}
+
+.pillar p {
+  font-size: 0.95rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+  max-width: none;
+}
+
+/* ══════════════════════════════════════
+   PULL QUOTE
+   ══════════════════════════════════════ */
+
+.pullquote {
+  padding: var(--space-xl) 0;
+  text-align: center;
+}
+
+.pullquote__text {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.5;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.pullquote__dash {
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: var(--terracotta);
+  margin: var(--space-md) auto 0;
+}
+
+/* ══════════════════════════════════════
+   FEATURED DISHES (Home)
+   ══════════════════════════════════════ */
+
+.featured {
+  padding: var(--space-xl) 0 var(--space-2xl);
+}
+
+.featured__label {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--teal);
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.featured__items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.featured__item {
+  text-align: center;
+  padding: var(--space-md);
+}
+
+.featured__item h4 {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.featured__item p {
+  font-size: 0.9rem;
+  color: var(--ink-light);
+  max-width: none;
+}
+
+.featured__cta {
+  text-align: center;
+  margin-top: var(--space-lg);
+}
+
+/* ══════════════════════════════════════
+   SECTION HERO IMAGES
+   ══════════════════════════════════════ */
+
+.section-hero {
+  width: 100%;
+  height: 50vh;
+  min-height: 350px;
+  max-height: 500px;
+  overflow: hidden;
+  position: relative;
+}
+
+.section-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.section-hero--short {
+  height: 35vh;
+  min-height: 250px;
+  max-height: 380px;
+}
+
+/* ══════════════════════════════════════
+   ABOUT
+   ══════════════════════════════════════ */
+
+.about__body p {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  margin-bottom: 1.5rem;
+}
+
+.values {
+  margin: var(--space-lg) 0;
+}
+
+.values p {
+  font-size: 0.95rem;
+  color: var(--ink-light);
+  margin-bottom: 0.6rem;
+  padding-left: 0;
+}
+
+/* ── Founders ── */
+.founders {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  margin-top: var(--space-xl);
+}
+
+.founder__img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  margin-bottom: var(--space-sm);
+  filter: grayscale(20%);
+}
+
+.founder__name {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.founder__bio {
+  font-size: 0.9rem;
+  color: var(--ink-light);
+  line-height: 1.75;
+}
+
+/* ══════════════════════════════════════
+   ART PROGRAM
+   ══════════════════════════════════════ */
+
+.art__intro p {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  margin-bottom: var(--space-md);
+}
+
+.art__disciplines {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 2;
+  margin: var(--space-md) 0;
+  max-width: 680px;
+}
+
+.art__how p {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  margin-top: var(--space-md);
+}
+
+/* ══════════════════════════════════════
+   FOOD & DRINK MENU
+   ══════════════════════════════════════ */
+
+.menu-section {
+  margin-bottom: var(--space-xl);
+}
+
+.menu-section__title {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: var(--space-md);
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--divider-light);
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--divider-light);
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-item__name {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--ink);
+  min-width: 120px;
+  flex-shrink: 0;
+}
+
+.menu-item__desc {
+  font-size: 0.9rem;
+  color: var(--ink-light);
+  text-align: right;
+  padding-left: var(--space-md);
+}
+
+/* ══════════════════════════════════════
+   VISIT
+   ══════════════════════════════════════ */
+
+.visit__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  margin-top: var(--space-lg);
+}
+
+.visit__info h3 {
+  font-size: 1rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 0.75rem;
+  margin-top: var(--space-md);
+}
+
+.visit__info h3:first-child {
+  margin-top: 0;
+}
+
+.visit__info p {
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+
+.visit__map {
+  background: var(--sand-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 350px;
+  overflow: hidden;
+}
+
+.visit__map-inner {
+  text-align: center;
+  padding: var(--space-md);
+}
+
+.visit__map-pin {
+  width: 32px;
+  height: 32px;
+  margin: 0 auto var(--space-sm);
+}
+
+.visit__map-label {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--ink);
+  margin-bottom: 0.25rem;
+}
+
+.visit__map-sub {
+  font-size: 0.85rem;
+  color: var(--ink-light);
+}
+
+/* Decorative map dots */
+.visit__map::before {
+  content: '';
+  position: absolute;
+  inset: 20px;
+  background-image:
+    radial-gradient(circle, var(--divider) 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.5;
+}
+
+/* ══════════════════════════════════════
+   SHOP
+   ══════════════════════════════════════ */
+
+.shop__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: var(--space-lg) 0;
+}
+
+.shop__card {
+  padding: var(--space-md) var(--space-sm);
+  text-align: center;
+  border: 1px solid var(--divider-light);
+  transition: border-color 0.3s ease;
+}
+
+.shop__card:hover {
+  border-color: var(--teal);
+}
+
+.shop__card-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.shop__card-title {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* ══════════════════════════════════════
+   FOR ARTISTS & INVESTORS
+   ══════════════════════════════════════ */
+
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.split__half {
+  padding: var(--space-xl) var(--space-lg);
+}
+
+.split__half--artists {
+  background: var(--sand);
+}
+
+.split__half--investors {
+  background: var(--sand-dark);
+}
+
+.split__label {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: var(--space-sm);
+}
+
+.split__half p {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin-bottom: var(--space-md);
+}
+
+.split__list {
+  margin: var(--space-md) 0 var(--space-lg);
+}
+
+.split__list p {
+  font-size: 0.9rem;
+  color: var(--ink-light);
+  margin-bottom: 0.4rem;
+}
+
+/* ══════════════════════════════════════
+   FOUNDATION
+   ══════════════════════════════════════ */
+
+.foundation {
+  background: var(--ink);
+  color: var(--sand);
+  text-align: center;
+}
+
+.foundation h2 {
+  color: var(--sand);
+}
+
+.foundation p {
+  color: rgba(245, 240, 232, 0.8);
+  max-width: 700px;
+  margin: 0 auto var(--space-lg);
+  font-size: 1.05rem;
+  line-height: 1.85;
+}
+
+.foundation .btn--outline {
+  color: var(--sand);
+  border-color: rgba(245, 240, 232, 0.4);
+}
+
+.foundation .btn--outline:hover {
+  background: var(--sand);
+  color: var(--ink);
+  border-color: var(--sand);
+}
+
+/* ══════════════════════════════════════
+   FOOTER
+   ══════════════════════════════════════ */
+
+footer {
+  padding: var(--space-lg) 0 var(--space-md);
+  text-align: center;
+  border-top: 1px solid var(--divider-light);
+}
+
+footer p {
+  font-size: 0.85rem;
+  color: var(--ink-light);
+  max-width: none;
+}
+
+.footer__logo {
+  height: 60px;
+  width: auto;
+  margin: 0 auto var(--space-md);
+}
+
+.footer__mission {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 1rem !important;
+  color: var(--ink) !important;
+  margin-bottom: var(--space-md);
+}
+
+.footer__social {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin: var(--space-md) 0;
+}
+
+.footer__social a {
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-light);
+  transition: color 0.3s ease;
+}
+
+.footer__social a:hover {
+  color: var(--teal);
+}
+
+/* ══════════════════════════════════════
+   MOBILE RESPONSIVE
+   ══════════════════════════════════════ */
+
+@media (max-width: 900px) {
+  .pillars__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+    text-align: left;
+  }
+
+  .featured__items {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .featured__item {
+    text-align: left;
+    padding: var(--space-sm) 0;
+    border-bottom: 1px solid var(--divider-light);
+  }
+
+  .featured__item:last-child {
+    border-bottom: none;
+  }
+
+  .founders {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .visit__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .shop__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .split {
+    grid-template-columns: 1fr;
+  }
+
+  .split__half {
+    padding: var(--space-lg) var(--space-md);
+  }
+}
+
+@media (max-width: 768px) {
+  .nav__links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    max-width: 320px;
+    height: 100vh;
+    background: var(--sand);
+    flex-direction: column;
+    padding: 5rem 2rem 2rem;
+    gap: 1.5rem;
+    transition: right 0.4s ease;
+    box-shadow: -4px 0 20px rgba(0,0,0,0.1);
+  }
+
+  .nav__links.open {
+    right: 0;
+  }
+
+  .nav__links a {
+    color: var(--ink) !important;
+    font-size: 0.9rem;
+  }
+
+  .nav__toggle {
+    display: flex;
+    z-index: 1001;
+  }
+
+  .nav__overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(26,26,26,0.3);
+    z-index: 999;
+  }
+
+  .nav__overlay.open {
+    display: block;
+  }
+
+  .hero__title {
+    font-size: clamp(2.5rem, 10vw, 4rem);
+  }
+
+  .menu-item {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .menu-item__desc {
+    text-align: left;
+    padding-left: 0;
+  }
+
+  .shop__grid {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: var(--space-xl) 0;
+  }
+
+  .preloader__title {
+    font-size: clamp(2.5rem, 12vw, 4rem);
+    letter-spacing: 0.2em;
+  }
+
+  .preloader__coords {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+  }
+}
+
+/* ══════════════════════════════════════
+   GALLERY
+   ══════════════════════════════════════ */
+
+.gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  margin: var(--space-lg) 0 0;
+}
+
+.gallery__item {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1;
+  cursor: pointer;
+}
+
+.gallery__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.gallery__item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(28,35,33,0.25) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.gallery__item:hover::after {
+  opacity: 1;
+}
+
+.gallery__item:hover img {
+  transform: scale(1.05);
+}
+
+.gallery__item--wide {
+  grid-column: span 2;
+  aspect-ratio: 2/1;
+}
+
+.gallery__item--tall {
+  grid-row: span 2;
+  aspect-ratio: auto;
+}
+
+/* ── Kids gallery: slightly larger items for just 3 images ── */
+.gallery__grid--kids {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── Lightbox ── */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 10001;
+  background: rgba(28, 35, 33, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  cursor: zoom-out;
+}
+
+.lightbox.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox img {
+  max-width: 90vw;
+  max-height: 85vh;
+  object-fit: contain;
+  transform: scale(0.9);
+  transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.lightbox.active img {
+  transform: scale(1);
+}
+
+.lightbox__close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox__close::before,
+.lightbox__close::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 1.5px;
+  background: rgba(245, 240, 232, 0.7);
+  transition: background 0.3s ease;
+}
+
+.lightbox__close::before { transform: rotate(45deg); }
+.lightbox__close::after { transform: rotate(-45deg); }
+
+.lightbox__close:hover::before,
+.lightbox__close:hover::after {
+  background: var(--white);
+}
+
+.lightbox__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 1rem;
+  color: rgba(245, 240, 232, 0.6);
+  font-size: 2rem;
+  transition: color 0.3s ease;
+}
+
+.lightbox__nav:hover {
+  color: var(--white);
+}
+
+.lightbox__nav--prev { left: 1rem; }
+.lightbox__nav--next { right: 1rem; }
+
+@media (max-width: 768px) {
+  .gallery__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4px;
+  }
+
+  .gallery__item--wide {
+    grid-column: span 2;
+  }
+
+  .gallery__item--tall {
+    grid-row: span 1;
+    aspect-ratio: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery__grid {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .gallery__item--wide {
+    grid-column: span 1;
+  }
+}
+
+/* ══════════════════════════════════════
+   PRELOADER
+   ══════════════════════════════════════ */
+
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  will-change: clip-path;
+}
+
+.preloader__bg {
+  position: absolute;
+  inset: 0;
+  background: url('images/General /Gemini_Generated_Image_iy3jtgiy3jtgiy3j.png') center/cover no-repeat;
+  transform: scale(1.15);
+  animation: preloaderZoom 6s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+@keyframes preloaderZoom {
+  0%   { transform: scale(1.15); }
+  100% { transform: scale(1.3); }
+}
+
+.preloader__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(28, 35, 33, 0.78) 0%,
+    rgba(26, 95, 106, 0.65) 50%,
+    rgba(28, 35, 33, 0.82) 100%
+  );
+}
+
+/* ── Ripple rings (water drop) ── */
+.preloader__ripple {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.preloader__ripple-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 1px solid rgba(245, 240, 232, 0.15);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: rippleExpand 3s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+.preloader__ripple-ring--1 { animation-delay: 0.2s; }
+.preloader__ripple-ring--2 { animation-delay: 0.6s; }
+.preloader__ripple-ring--3 { animation-delay: 1.0s; }
+
+@keyframes rippleExpand {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0.8;
+    border-width: 1px;
+  }
+  100% {
+    width: 50vmax;
+    height: 50vmax;
+    opacity: 0;
+    border-width: 0.5px;
+  }
+}
+
+/* ── Preloader content ── */
+.preloader__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.preloader__title {
+  font-family: var(--font-heading);
+  font-size: clamp(3.5rem, 10vw, 7rem);
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  color: var(--white);
+  margin: 0;
+  overflow: hidden;
+}
+
+.preloader__char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(100%) rotateX(-80deg);
+  animation: charReveal 0.8s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  animation-delay: calc(0.4s + var(--char-index) * 0.12s);
+  transform-origin: bottom center;
+  will-change: transform, opacity;
+}
+
+@keyframes charReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(100%) rotateX(-80deg);
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg);
+  }
+}
+
+.preloader__coords {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  color: rgba(245, 240, 232, 0.5);
+  margin-top: 1.5rem;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: coordsFade 1s cubic-bezier(0.445, 0.05, 0.55, 0.95) forwards;
+  animation-delay: 1.2s;
+}
+
+@keyframes coordsFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Progress bar ── */
+.preloader__progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgba(245, 240, 232, 0.1);
+}
+
+.preloader__progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--teal-light), var(--terracotta));
+  transition: width 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+/* ── Exit animations ── */
+.preloader--exiting .preloader__content {
+  animation: contentExit 0.8s cubic-bezier(0.445, 0.05, 0.55, 0.95) forwards;
+}
+
+.preloader--exiting .preloader__coords {
+  animation: contentExit 0.6s cubic-bezier(0.445, 0.05, 0.55, 0.95) forwards;
+}
+
+@keyframes contentExit {
+  to {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+}
+
+.preloader--exiting .preloader__progress {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.preloader--done {
+  animation: preloaderExit 1.2s cubic-bezier(0.445, 0.05, 0.55, 0.95) forwards;
+}
+
+@keyframes preloaderExit {
+  0%   { clip-path: inset(0 0 0 0); }
+  100% { clip-path: inset(0 0 100% 0); }
+}
+
+/* ── Lock scroll during preloader ── */
+body.preloader-active {
+  overflow: hidden;
+}
+
+/* ── Suppress hero animations while preloader is active ── */
+body.preloader-active .nav {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+}
+
+body.preloader-done .nav {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+body.preloader-active .hero__title,
+body.preloader-active .hero__subtitle,
+body.preloader-active .hero__buttons,
+body.preloader-active .hero__scroll {
+  animation: none !important;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* ── Re-trigger hero animations after preloader exits ── */
+body.preloader-done .hero__subtitle {
+  animation: heroFade 1.2s ease forwards 0.3s;
+}
+body.preloader-done .hero__buttons {
+  animation: heroFade 1.2s ease forwards 0.5s;
+}
+body.preloader-done .hero__scroll {
+  animation: heroFade 1.2s ease forwards 1.0s;
+}
+
+/* ── Hero char-by-char animation (post-preloader) ── */
+.hero__char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+body.preloader-done .hero__title {
+  animation: none !important;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+body.preloader-done .hero__char {
+  animation: heroCharReveal 0.7s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  animation-delay: calc(0.1s + var(--ci) * 0.06s);
+}
+
+@keyframes heroCharReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .preloader__char {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  .preloader__bg {
+    animation: none;
+    transform: scale(1.15);
+  }
+  .preloader__ripple-ring {
+    animation: none;
+    display: none;
+  }
+  .preloader__coords {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  .preloader--done {
+    animation-duration: 0.3s;
+  }
+  .hero__char {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
+
+/* ── Grain overlay for texture ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+</style>
+</head>
+<body class="preloader-active">
+
+<!-- ════════════════════════════════════
+     PRELOADER
+     ════════════════════════════════════ -->
+<div class="preloader" id="preloader">
+  <div class="preloader__bg"></div>
+  <div class="preloader__overlay"></div>
+  <div class="preloader__ripple">
+    <div class="preloader__ripple-ring preloader__ripple-ring--1"></div>
+    <div class="preloader__ripple-ring preloader__ripple-ring--2"></div>
+    <div class="preloader__ripple-ring preloader__ripple-ring--3"></div>
+  </div>
+  <div class="preloader__content">
+    <h2 class="preloader__title" aria-label="ONGE">
+      <span class="preloader__char" style="--char-index:0">O</span><span class="preloader__char" style="--char-index:1">N</span><span class="preloader__char" style="--char-index:2">G</span><span class="preloader__char" style="--char-index:3">E</span>
+    </h2>
+    <p class="preloader__coords">11.5883&deg; N, 92.6199&deg; E</p>
+  </div>
+  <div class="preloader__progress">
+    <div class="preloader__progress-bar" id="preloaderProgress"></div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════
+     NAVIGATION
+     ════════════════════════════════════ -->
+<nav class="nav" id="nav">
+  <a href="#home" class="nav__logo"><img src="images/Logo/onge-logo-transparent.png" alt="Onge Cafe" class="nav__logo-img"></a>
+  <ul class="nav__links" id="navLinks">
+    <li><a href="#about" onclick="closeNav()">About</a></li>
+    <li><a href="#gallery" onclick="closeNav()">Gallery</a></li>
+    <li><a href="#art" onclick="closeNav()">Art Program</a></li>
+    <li><a href="#menu" onclick="closeNav()">Menu</a></li>
+    <li><a href="#visit" onclick="closeNav()">Visit</a></li>
+    <li><a href="#shop" onclick="closeNav()">Shop</a></li>
+    <li><a href="#artists" onclick="closeNav()">For Artists</a></li>
+    <li><a href="#foundation" onclick="closeNav()">Foundation</a></li>
+  </ul>
+  <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav__overlay" id="navOverlay" onclick="closeNav()"></div>
+
+<!-- ════════════════════════════════════
+     HOME — HERO
+     ════════════════════════════════════ -->
+<section class="hero" id="home">
+  <div class="hero__bg"></div>
+  <div class="hero__overlay"></div>
+  <div class="hero__content">
+    <h1 class="hero__title" aria-label="Onge Cafe"><span class="hero__char" style="--ci:0">O</span><span class="hero__char" style="--ci:1">n</span><span class="hero__char" style="--ci:2">g</span><span class="hero__char" style="--ci:3">e</span><span class="hero__char" style="--ci:4">&nbsp;</span><span class="hero__char" style="--ci:5">C</span><span class="hero__char" style="--ci:6">a</span><span class="hero__char" style="--ci:7">f</span><span class="hero__char" style="--ci:8">e</span></h1>
+    <p class="hero__subtitle">Where the ocean meets the art of being.</p>
+    <div class="hero__buttons">
+      <a href="#about" class="btn btn--primary">Explore the Cafe</a>
+      <a href="#artists" class="btn btn--outline" style="color:#fff;border-color:rgba(255,255,255,0.5)">For Artists</a>
+    </div>
+  </div>
+  <div class="hero__scroll"><span></span></div>
+</section>
+
+<!-- ════════════════════════════════════
+     HOME — THREE PILLARS
+     ════════════════════════════════════ -->
+<section class="pillars">
+  <div class="container">
+    <div class="pillars__grid">
+      <div class="pillar reveal">
+        <div class="pillar__label">A Cafe</div>
+        <p>Vegan-first food, global flavors, and specialty coffee — named after the islands that inspired us.</p>
+      </div>
+      <div class="pillar reveal">
+        <div class="pillar__label">A Stage</div>
+        <p>Weekly showcases for local and visiting artists — music, photography, film, craft, and everything in between.</p>
+      </div>
+      <div class="pillar reveal">
+        <div class="pillar__label">A Foundation</div>
+        <p>Every meal, every visit, every piece of art sold — supports the Island Lab Foundation and the communities of Andaman.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════
+     HOME — PULL QUOTE
+     ════════════════════════════════════ -->
+<section class="pullquote reveal">
+  <div class="container">
+    <p class="pullquote__text">"Some places ask you to look at things. Onge asks you to feel them."</p>
+    <span class="pullquote__dash"></span>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════
+     HOME — FEATURED DISHES
+     ════════════════════════════════════ -->
+<section class="featured">
+  <div class="container">
+    <div class="featured__label reveal">From the Kitchen</div>
+    <div class="featured__items">
+      <div class="featured__item reveal">
+        <h4>Barren Island Bowl</h4>
+        <p>Smoky roasted vegetables, coconut tahini, wild rice.</p>
+      </div>
+      <div class="featured__item reveal">
+        <h4>Neil's Garden Wrap</h4>
+        <p>Slow-fermented greens, cashew cream, turmeric flatbread.</p>
+      </div>
+      <div class="featured__item reveal">
+        <h4>Havelock Cold Brew</h4>
+        <p>Single origin, 16-hour steep, served over coconut ice.</p>
+      </div>
+    </div>
+    <div class="featured__cta reveal">
+      <a href="#menu" class="btn btn--outline">See the full menu</a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════
+     ABOUT
+     ════════════════════════════════════ -->
+<div class="section-hero" id="about">
+  <img src="images/Cafe/Gemini_Generated_Image_4jmibi4jmibi4jmi.png" alt="Onge Cafe interior with ocean view, art and music" loading="lazy">
+</div>
+
+<section>
+  <div class="container">
+    <h2 class="section-title reveal">About</h2>
+    <div class="about__body">
+      <p class="reveal">Onge Cafe was born from a simple belief: that art belongs everywhere, and that the Andaman Islands — ancient, beautiful, and underrepresented — deserve a space that holds both.</p>
+      <p class="reveal">Named after the Onge, one of the indigenous communities of the Andaman Islands, this cafe is an act of respect. A place that listens before it speaks.</p>
+      <p class="reveal">We built it at Wandoor — where the forest meets the sea — because that is exactly the kind of tension we love: wild and quiet, raw and refined.</p>
+    </div>
+
+    <div class="divider divider--left"></div>
+
+    <div class="values reveal">
+      <p>— Art that is paid, not just platformed</p>
+      <p>— Food that is conscious, not complicated</p>
+      <p>— A space that serves the community, not just the customer</p>
+      <p>— Long-term impact over short-term profit</p>
+    </div>
+
+    <div class="divider divider--left"></div>
+
+    <div class="founders">
+      <div class="reveal">
+        <img class="founder__img" src="images/Founder/JF.png" alt="Johny, co-founder" loading="lazy">
+        <h3 class="founder__name">Johny</h3>
+        <p class="founder__bio">A production technologist and filmmaker. Leads production technology across Asia for Netflix. Spends his quiet hours thinking about how creativity can change communities.</p>
+      </div>
+      <div class="reveal">
+        <img class="founder__img" src="images/Founder/DF.jpg" alt="Dweepanjali, co-founder" loading="lazy">
+        <h3 class="founder__name">Dweepanjali</h3>
+        <p class="founder__bio">A leader, a builder, and a quiet believer in the power of community. Two decades of experience across operations, program management, and delivery leadership. Known for building cohesive teams and solving problems that matter. An avid fiction reader who collects quotes the way some people collect shells.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════
+     GALLERY — THE SPACE
+     ════════════════════════════════════ -->
+<section id="gallery" style="background:var(--sand-dark)">
+  <div class="container--wide">
+    <h2 class="section-title reveal">The Space</h2>
+    <p class="reveal" style="margin-bottom:0">A walk through Onge — where the forest meets the sea, and every corner holds something worth noticing.</p>
+    <div class="gallery__grid">
+      <div class="gallery__item reveal" onclick="openLightbox(this)">
+        <img src="images/Cafe/Gemini_Generated_Image_4jmibi4jmibi4jmi.png" alt="Onge Cafe interior — ocean-view dining with thatched roof and tropical art" loading="lazy">
+      </div>
+      <div class="gallery__item reveal" onclick="openLightbox(this)">
+        <img src="images/Cafe/Gemini_Generated_Image_88px5n88px5n88px.png" alt="Onge Cafe lounge — carved wood details, blue ocean painting, island view" loading="lazy">
+      </div>
+      <div class="gallery__item reveal" onclick="openLightbox(this)">
+        <img src="images/Cafe/Gemini_Generated_Image_ys2w2rys2w2rys2w.png" alt="Live classical dance performance on stage at Onge Cafe" loading="lazy">
+      </div>
+      <div class="gallery__item reveal" onclick="openLightbox(this)">
+        <img src="images/General /Gemini_Generated_Image_suo0wusuo0wusuo0.png" alt="Aerial view of the deep blue Andaman Sea" loading="lazy">
+      </div>
+      <div class="gallery__item reveal" onclick="openLightbox(this)">
+        <img src="images/Cafe/Gemini_Generated_Image_pbuw2spbuw2spbuw.png" alt="Onge Cafe arched interior — guests, teal cushions, ocean breeze" loading="lazy">
+      </div>
+      <div class="gallery__item reveal" onclick="openLightbox(this)">
+        <img src="images/Cafe/Image for the cafe.jpg" alt="Onge Cafe — bamboo arches, bar counter, guests enjoying the space" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════
+     THE ART PROGRAM
+     ════════════════════════════════════ -->
+<div class="section-hero" id="art">
+  <img src="images/Cafe/Gemini_Generated_Image_ys2w2rys2w2rys2w.png" alt="Artist performing on stage at Onge Cafe" loading="lazy">
+</div>
+
+<section>
+  <div class="container">
+    <h2 class="section-title reveal">The Art Program</h2>
+    <div class="art__intro">
+      <p class="reveal">Onge is a multi-artform platform. Every week, the cafe transforms — into a gallery, a concert, a screening room, a workshop, or an open studio.</p>
+    </div>
+    <div class="art__disciplines reveal">
+      Music and acoustic performances · Photography exhibitions · Short film screenings · Craft and textile showcases · Poetry and spoken word · Artist residencies
+    </div>
+    <div class="divider divider--left"></div>
+    <div class="art__how reveal">
+      <p>Artists apply or are invited. Each showcase runs for a week or a single evening. All artists are compensated. This is not a passion project for the artist. It is work. We treat it that way.</p>
+    </div>
+    <div style="margin-top:var(--space-lg)" class="reveal">
+      <a href="mailto:hello@ongecafe.com?subject=Art%20Program%20Submission" class="btn btn--terracotta">Submit your work</a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════
+     FOOD & DRINK
+     ════════════════════════════════════ -->
+<div class="section-hero" id="menu">
+  <img src="images/Food Menu/Gemini_Generated_Image_dd7u1ddd7u1ddd7u.png" alt="Vegan dish at Onge Cafe, natural light" loading="lazy">
+</div>
+
+<section>
+  <div class="container">
+    <h2 class="section-title reveal">Food &amp; Drink</h2>
+    <p class="reveal" style="margin-bottom:var(--space-xl)">We cook global, we source local, and we name everything after the islands that feed our imagination. Vegan-first. A curated selection of vegetarian dishes. No compromise on flavor.</p>
+
+    <!-- SMALL PLATES -->
+    <div class="menu-section reveal">
+      <div class="menu-section__title">Small Plates</div>
+      <div class="menu-item">
+        <span class="menu-item__name">Cinque</span>
+        <span class="menu-item__desc">Raw jackfruit ceviche, coconut milk, lime, micro herbs, chili oil</span>
+      </div>
+      <div class="menu-item">
+        <span class="menu-item__name">Smith</span>
+        <span class="menu-item__desc">Cashew ricotta bruschetta, heirloom tomato, toasted sourdough, basil oil</span>
+      </div>
+      <div class="menu-item">
+        <span class="menu-item__name">Little Andaman</span>
+        <span class="menu-item__desc">Tropical slaw, mango, toasted coconut, sesame, rice paper cups</span>
+      </div>
+      <div class="menu-item">
+        <span class="menu-item__name">Rutland</span>
+        <span class="menu-item__desc">Fermented black bean dip, house flatbread, pickled cucumber, smoked paprika</span>
+      </div>
+    </div>
+
+    <!-- MAINS -->
+    <div class="menu-section reveal">
+      <div class="menu-section__title">Mains</div>
+      <div class="menu-item">
+        <span class="menu-item__name">Barren</span>
+        <span class="menu-item__desc">Charred cauliflower steak, smoky tomato reduction, wild rice, crispy capers</span>
+      </div>
+      <div class="menu-item">
+        <span class="menu-item__name">Neil</span>
+        <span class="menu-item__desc">Slow-fermented greens wrap, cashew cream, turmeric flatbread, sprout salad</span>
+      </div>
+      <div class="menu-item">
+        <span class="menu-item__name">Interview</span>
+        <span class="menu-item__desc">Slow-cooked forest lentil curry, coconut broth, hand-torn roti</span>
+      </div>
+      <div class="menu-item">
+        <span class="menu-item__name">Long Island</span>
+        <span class="menu-item__desc">Grain bowl, quinoa, roasted root vegetables, tahini, za'atar, soft herbs</span>
+      </div>
+      <div class="menu-item">
+        <span class="menu-item__name">Havelock</span>
+        <span class="menu-item__desc">Fresh noodle salad, peanut-ginger dressing, edamame, sesame, crispy shallots</span>
+      </div>
+      <div class="menu-item">
+        <span class="menu-item__name">Rangat</span>
+        <span class="menu-item__desc">Comfort dal, basmati, papad, pickle</span>
+      </div>
+    </div>
+
+    <!-- DESSERTS -->
+    <div class="menu-section reveal">
+      <div class="menu-section__title">Desserts</div>
+      <div class="menu-item">
+        <span class="menu-item__name">Ross</span>
+        <span class="menu-item__desc">Coconut panna cotta, palm sugar caramel, passionfruit, crystallized ginger</span>
+      </div>
+      <div class="menu-item">
+        <span class="menu-item__name">Diglipur</span>
+        <span class="menu-item__desc">Raw cacao mousse, sea salt, candied ginger, dark cocoa crumb</span>
+      </div>
+      <div class="menu-item">
+        <span class="menu-item__name">Baratang</span>
+        <span class="menu-item__desc">Banana-coconut soft cake, lime glaze, toasted seeds</span>
+      </div>
+    </div>
+
+    <!-- DRINKS -->
+    <div class="menu-section reveal">
+      <div class="menu-section__title">Drinks</div>
+      <div class="menu-item">
+        <span class="menu-item__name">Havelock Cold Brew</span>
+        <span class="menu-item__desc">Single origin, 16-hour steep, coconut ice</span>
+      </div>
+      <div class="menu-item">
+        <span class="menu-item__name">Onge Chai</span>
+        <span class="menu-item__desc">House masala, oat milk, slow-brewed, clay cup</span>
+      </div>
+      <div class="menu-item">
+        <span class="menu-item__name">Wandoor Sunrise</span>
+        <span class="menu-item__desc">Cold-pressed orange, turmeric, ginger, sparkling water</span>
+      </div>
+      <div class="menu-item">
+        <span class="menu-item__name">Barren Smoke</span>
+        <span class="menu-item__desc">Activated charcoal lemonade, black salt, mint, soda</span>
+      </div>
+      <div class="menu-item">
+        <span class="menu-item__name">Neil's Green</span>
+        <span class="menu-item__desc">Cucumber, spinach, green apple, cold-pressed</span>
+      </div>
+      <div class="menu-item">
+        <span class="menu-item__name">Ross Blossom</span>
+        <span class="menu-item__desc">Rose water, hibiscus, lychee, sparkling</span>
+      </div>
+      <div class="menu-item">
+        <span class="menu-item__name">Island Kombucha</span>
+        <span class="menu-item__desc">Rotating seasonal flavor</span>
+      </div>
+      <div class="menu-item">
+        <span class="menu-item__name">Rutland Ferment</span>
+        <span class="menu-item__desc">House tepache, fermented pineapple, spiced, lightly fizzy</span>
+      </div>
+    </div>
+
+    <!-- TEAS -->
+    <div class="menu-section reveal">
+      <div class="menu-section__title">Teas</div>
+      <div class="menu-item">
+        <span class="menu-item__name">Forest Brew</span>
+        <span class="menu-item__desc">Wild tulsi, lemongrass, dried ginger, hot</span>
+      </div>
+      <div class="menu-item">
+        <span class="menu-item__name">Coral Tea</span>
+        <span class="menu-item__desc">Butterfly pea flower, lemon, honey, colour-changing</span>
+      </div>
+      <div class="menu-item">
+        <span class="menu-item__name">Quiet Island</span>
+        <span class="menu-item__desc">Chamomile, cardamom, oat milk</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════
+     GALLERY — FROM THE KITCHEN
+     ════════════════════════════════════ -->
+<section id="food-gallery" style="background:var(--sand-dark)">
+  <div class="container--wide">
+    <h2 class="section-title reveal">From the Kitchen</h2>
+    <p class="reveal" style="margin-bottom:0">Every dish named after an island. Every plate a small act of intention.</p>
+    <div class="gallery__grid">
+      <div class="gallery__item reveal" onclick="openLightbox(this)">
+        <img src="images/Food Menu/Gemini_Generated_Image_dd7u1ddd7u1ddd7u.png" alt="Onge Cafe dish" loading="lazy">
+      </div>
+      <div class="gallery__item reveal" onclick="openLightbox(this)">
+        <img src="images/Food Menu/Gemini_Generated_Image_43anmx43anmx43an.png" alt="Onge Cafe dish" loading="lazy">
+      </div>
+      <div class="gallery__item reveal" onclick="openLightbox(this)">
+        <img src="images/Food Menu/Gemini_Generated_Image_dglo6edglo6edglo.png" alt="Onge Cafe dish" loading="lazy">
+      </div>
+      <div class="gallery__item gallery__item--wide reveal" onclick="openLightbox(this)">
+        <img src="images/Food Menu/Gemini_Generated_Image_yn5t0wyn5t0wyn5t.png" alt="Onge Cafe dish" loading="lazy">
+      </div>
+      <div class="gallery__item reveal" onclick="openLightbox(this)">
+        <img src="images/Food Menu/Gemini_Generated_Image_xsxjuixsxjuixsxj.png" alt="Onge Cafe sandwich" loading="lazy">
+      </div>
+      <div class="gallery__item reveal" onclick="openLightbox(this)">
+        <img src="images/Food Menu/Gemini_Generated_Image_wq4cj4wq4cj4wq4c.png" alt="Onge Cafe dish" loading="lazy">
+      </div>
+      <div class="gallery__item reveal" onclick="openLightbox(this)">
+        <img src="images/Food Menu/Gemini_Generated_Image_bw6mzkbw6mzkbw6m.png" alt="Onge Cafe dish" loading="lazy">
+      </div>
+      <div class="gallery__item reveal" onclick="openLightbox(this)">
+        <img src="images/Food Menu/Gemini_Generated_Image_mejjk3mejjk3mejj.png" alt="Onge Cafe smoothie bowl" loading="lazy">
+      </div>
+      <div class="gallery__item reveal" onclick="openLightbox(this)">
+        <img src="images/Food Menu/Gemini_Generated_Image_lqn0fvlqn0fvlqn0.png" alt="Onge Cafe dish" loading="lazy">
+      </div>
+      <div class="gallery__item reveal" onclick="openLightbox(this)">
+        <img src="images/Food Menu/Gemini_Generated_Image_eislcmeislcmeisl.png" alt="Onge Cafe dish" loading="lazy">
+      </div>
+      <div class="gallery__item reveal" onclick="openLightbox(this)">
+        <img src="images/Food Menu/Gemini_Generated_Image_hpc4plhpc4plhpc4.png" alt="Onge Cafe dish" loading="lazy">
+      </div>
+      <div class="gallery__item reveal" onclick="openLightbox(this)">
+        <img src="images/Food Menu/Gemini_Generated_Image_nkmveinkmveinkmv.png" alt="Onge Cafe french toast" loading="lazy">
+      </div>
+      <div class="gallery__item reveal" onclick="openLightbox(this)">
+        <img src="images/Food Menu/Gemini_Generated_Image_wf7an5wf7an5wf7a.png" alt="Onge Cafe pancakes" loading="lazy">
+      </div>
+      <div class="gallery__item reveal" onclick="openLightbox(this)">
+        <img src="images/Food Menu/Gemini_Generated_Image_10zfdw10zfdw10zf.png" alt="Onge Cafe dish" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════
+     GALLERY — LITTLE ISLANDERS (Kids Menu)
+     ════════════════════════════════════ -->
+<section id="kids-gallery" style="background:var(--sand)">
+  <div class="container--wide">
+    <h2 class="section-title reveal">Little Islanders</h2>
+    <p class="reveal" style="margin-bottom:0">For the youngest explorers — playful plates shaped like the islands they're named after. Every bite an adventure.</p>
+    <div class="gallery__grid gallery__grid--kids">
+      <div class="gallery__item reveal" onclick="openLightbox(this)">
+        <img src="images/Food Menu/Gemini_Generated_Image_2c0mmk2c0mmk2c0m.png" alt="Island Fish — smiling fish-shaped rice on a blue ocean plate with star-shaped veggies" loading="lazy">
+      </div>
+      <div class="gallery__item reveal" onclick="openLightbox(this)">
+        <img src="images/Food Menu/Gemini_Generated_Image_rshi7wrshi7wrshi.png" alt="Sandcastle Cake — golden sandcastle dessert on blue rice beach with tiny shovel" loading="lazy">
+      </div>
+      <div class="gallery__item reveal" onclick="openLightbox(this)">
+        <img src="images/Food Menu/Gemini_Generated_Image_qfn1oxqfn1oxqfn1.png" alt="Lighthouse Tower — red beetroot lighthouse with treasure chest and sea creatures" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════
+     VISIT
+     ════════════════════════════════════ -->
+<div class="section-hero section-hero--short" id="visit">
+  <img src="images/General /Gemini_Generated_Image_suo0wusuo0wusuo0.png" alt="Aerial view of deep blue Andaman ocean" loading="lazy">
+</div>
+
+<section>
+  <div class="container--wide">
+    <h2 class="section-title reveal">Visit</h2>
+    <div class="visit__grid">
+      <div class="visit__info reveal">
+        <h3>Address</h3>
+        <p>Onge Cafe<br>Wandoor Beach Road, Wandoor<br>South Andaman, Andaman &amp; Nicobar Islands — 744 103</p>
+
+        <h3>Hours</h3>
+        <p>Tuesday – Sunday: 9:00 AM – 9:00 PM<br>Monday: Closed</p>
+
+        <h3>Getting Here</h3>
+        <p>Wandoor is approximately 29 km from Port Blair. Accessible by road — roughly 45 minutes. Shared autos and taxis available from Port Blair. Worth every minute of the drive.</p>
+
+        <h3>What to Expect</h3>
+        <p>Indoor and outdoor seating. WiFi available. Laptop-friendly during non-event hours. Quiet enough to think. Warm enough to stay.</p>
+      </div>
+      <div class="visit__map reveal">
+        <div class="visit__map-inner">
+          <svg class="visit__map-pin" viewBox="0 0 24 24" fill="none" stroke="var(--terracotta)" stroke-width="1.5">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+            <circle cx="12" cy="9" r="2.5"/>
+          </svg>
+          <p class="visit__map-label">Onge Cafe</p>
+          <p class="visit__map-sub">Wandoor Beach, South Andaman</p>
+          <p class="visit__map-sub" style="margin-top:0.5rem;font-size:0.75rem;color:var(--teal)">11.5883° N, 92.6199° E</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════
+     SHOP
+     ════════════════════════════════════ -->
+<section id="shop" style="background:var(--sand-dark)">
+  <div class="container">
+    <h2 class="section-title reveal">Shop</h2>
+    <p class="reveal" style="margin-bottom:0">Everything in the Onge shop is either made by artists we've hosted or designed in collaboration with the Island Lab Foundation. When you buy here, you support a working artist and a living community.</p>
+
+    <div class="shop__grid">
+      <div class="shop__card reveal">
+        <span class="shop__card-icon">◻</span>
+        <span class="shop__card-title">Art Prints</span>
+      </div>
+      <div class="shop__card reveal">
+        <span class="shop__card-icon">◎</span>
+        <span class="shop__card-title">Handmade Ceramics &amp; Crafts</span>
+      </div>
+      <div class="shop__card reveal">
+        <span class="shop__card-icon">△</span>
+        <span class="shop__card-title">Tote Bags &amp; Apparel</span>
+      </div>
+      <div class="shop__card reveal">
+        <span class="shop__card-icon">▭</span>
+        <span class="shop__card-title">Zines &amp; Publications</span>
+      </div>
+      <div class="shop__card reveal">
+        <span class="shop__card-icon">◇</span>
+        <span class="shop__card-title">Photography Editions</span>
+      </div>
+    </div>
+
+    <div style="text-align:center" class="reveal">
+      <a href="#" class="btn btn--primary">Shop Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════
+     FOR ARTISTS & INVESTORS
+     ════════════════════════════════════ -->
+<section id="artists" style="padding:0">
+  <div class="split">
+    <div class="split__half split__half--artists">
+      <div class="split__label reveal">For Artists</div>
+      <h3 class="reveal" style="margin-bottom:var(--space-md)">Create with us</h3>
+      <p class="reveal">We are building something rare — a paid platform for artists in one of India's most beautiful and under-resourced regions. If you create — we want to hear from you.</p>
+      <div class="split__list reveal">
+        <p>— A stage, a wall, or a shelf</p>
+        <p>— Fair compensation</p>
+        <p>— A community that cares</p>
+        <p>— Documentation and promotion of your work</p>
+      </div>
+      <div class="reveal">
+        <a href="mailto:hello@ongecafe.com?subject=Artist%20Submission" class="btn btn--terracotta">Submit your work</a>
+      </div>
+    </div>
+    <div class="split__half split__half--investors">
+      <div class="split__label reveal">For Investors</div>
+      <h3 class="reveal" style="margin-bottom:var(--space-md)">Partner with us</h3>
+      <p class="reveal">Onge is not just a cafe. It is a long-term cultural infrastructure project in a region that has never had one. We are looking for partners who understand that impact and quality are not in conflict.</p>
+      <div class="split__list reveal">
+        <p>— Artist residency programs</p>
+        <p>— Community art education</p>
+        <p>— Cultural heritage documentation</p>
+        <p>— Physical space expansion</p>
+      </div>
+      <div class="reveal">
+        <a href="mailto:hello@ongecafe.com?subject=Investment%20Inquiry" class="btn btn--outline">Get in touch</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════
+     ISLAND LAB FOUNDATION
+     ════════════════════════════════════ -->
+<section class="foundation" id="foundation">
+  <div class="container">
+    <h2 class="section-title reveal">Island Lab Foundation</h2>
+    <p class="reveal">Onge Cafe is the physical home of the Island Lab Foundation — a non-profit initiative dedicated to promoting art, storytelling, photography, and filmmaking in the Andaman and Nicobar Islands. Our focus is underprivileged communities, young creators, and the preservation of local cultural identity through contemporary creative practice. Every visit to Onge contributes to this mission.</p>
+    <div class="reveal">
+      <a href="#" class="btn btn--outline">Learn more about Island Lab Foundation</a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════
+     FOOTER
+     ════════════════════════════════════ -->
+<footer>
+  <div class="container">
+    <img src="images/Logo/onge-logo-transparent.png" alt="Onge Cafe" class="footer__logo">
+    <p class="footer__mission">Part of the Island Lab Foundation. Built with love in the Andaman Islands.</p>
+    <div class="footer__social">
+      <a href="#">Instagram</a>
+      <a href="#">Facebook</a>
+    </div>
+    <p>&copy; 2025 Onge Cafe. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- ════════════════════════════════════
+     LIGHTBOX
+     ════════════════════════════════════ -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <button class="lightbox__close" onclick="closeLightbox(event)" aria-label="Close"></button>
+  <button class="lightbox__nav lightbox__nav--prev" onclick="navLightbox(-1, event)">&#8249;</button>
+  <img id="lightboxImg" src="" alt="">
+  <button class="lightbox__nav lightbox__nav--next" onclick="navLightbox(1, event)">&#8250;</button>
+</div>
+
+<!-- ════════════════════════════════════
+     JAVASCRIPT
+     ════════════════════════════════════ -->
+<script>
+// ══════════════════════════════════════
+// PRELOADER ORCHESTRATION
+// ══════════════════════════════════════
+(function() {
+  'use strict';
+
+  var preloader = document.getElementById('preloader');
+  var progressBar = document.getElementById('preloaderProgress');
+  var progress = 0;
+  var loaded = false;
+  var MINIMUM_DISPLAY_TIME = 2800;
+  var startTime = Date.now();
+
+  // Simulate progress 0→85% with ease-out curve
+  function simulateProgress() {
+    if (progress >= 85 || loaded) return;
+    var increment = Math.max(0.5, (85 - progress) * 0.05);
+    progress = Math.min(85, progress + increment);
+    progressBar.style.width = progress + '%';
+    requestAnimationFrame(simulateProgress);
+  }
+  requestAnimationFrame(simulateProgress);
+
+  // When all resources are loaded
+  function onResourcesLoaded() {
+    if (loaded) return;
+    loaded = true;
+    progress = 100;
+    progressBar.style.width = '100%';
+
+    var elapsed = Date.now() - startTime;
+    var remaining = Math.max(0, MINIMUM_DISPLAY_TIME - elapsed);
+    setTimeout(beginExitSequence, remaining);
+  }
+
+  function beginExitSequence() {
+    // Phase 1: Fade out preloader content (text slides up)
+    preloader.classList.add('preloader--exiting');
+
+    // Phase 2: Clip-path curtain reveal
+    setTimeout(function() {
+      preloader.classList.add('preloader--done');
+
+      // Unlock scroll, trigger hero animations
+      document.body.classList.remove('preloader-active');
+      document.body.classList.add('preloader-done');
+
+      // Trigger hero Ken Burns zoom
+      document.querySelector('.hero').classList.add('loaded');
+
+      // Phase 3: Remove preloader from DOM
+      setTimeout(function() {
+        preloader.remove();
+      }, 1200);
+    }, 800);
+  }
+
+  window.addEventListener('load', onResourcesLoaded);
+
+  // Hard timeout fallback (8s)
+  setTimeout(function() {
+    if (!loaded) onResourcesLoaded();
+  }, 8000);
+})();
+
+// ── Scroll reveal ──
+const revealElements = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+revealElements.forEach(el => revealObserver.observe(el));
+
+// ── Nav scroll state ──
+const nav = document.getElementById('nav');
+let lastScroll = 0;
+
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  if (y > 80) {
+    nav.classList.add('scrolled');
+  } else {
+    nav.classList.remove('scrolled');
+  }
+  lastScroll = y;
+}, { passive: true });
+
+// ── Mobile nav ──
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+const navOverlay = document.getElementById('navOverlay');
+
+navToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+  navOverlay.classList.toggle('open');
+});
+
+function closeNav() {
+  navLinks.classList.remove('open');
+  navOverlay.classList.remove('open');
+}
+
+// ── Stagger reveal delays ──
+document.querySelectorAll('.pillars__grid .pillar, .featured__items .featured__item').forEach((el, i) => {
+  el.style.transitionDelay = `${i * 0.1}s`;
+});
+
+// ── Gallery stagger ──
+document.querySelectorAll('.gallery__grid .gallery__item').forEach((el, i) => {
+  el.style.transitionDelay = `${Math.min(i * 0.06, 0.5)}s`;
+});
+
+// ══════════════════════════════════════
+// LIGHTBOX
+// ══════════════════════════════════════
+var lightbox = document.getElementById('lightbox');
+var lightboxImg = document.getElementById('lightboxImg');
+var galleryImages = [];
+var currentIndex = 0;
+
+// Build image list from all gallery items
+document.querySelectorAll('.gallery__item img').forEach(function(img) {
+  galleryImages.push(img.src);
+});
+
+function openLightbox(el) {
+  var imgSrc = el.querySelector('img').src;
+  currentIndex = galleryImages.indexOf(imgSrc);
+  lightboxImg.src = imgSrc;
+  lightbox.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox(e) {
+  if (e.target === lightbox || e.target.classList.contains('lightbox__close') || e.target.closest('.lightbox__close')) {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+}
+
+function navLightbox(dir, e) {
+  e.stopPropagation();
+  currentIndex = (currentIndex + dir + galleryImages.length) % galleryImages.length;
+  lightboxImg.src = galleryImages[currentIndex];
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', function(e) {
+  if (!lightbox.classList.contains('active')) return;
+  if (e.key === 'Escape') { lightbox.classList.remove('active'); document.body.style.overflow = ''; }
+  if (e.key === 'ArrowLeft') navLightbox(-1, e);
+  if (e.key === 'ArrowRight') navLightbox(1, e);
+});
+</script>
+
+</body>
+</html>
